@@ -1,13 +1,14 @@
-#include "iostream"
+#include <iostream>
+#include <chrono>
 
 
-struct Entry {
+struct TEntry {
     char number[9];  // 9 потмоу что еще 1 на \0
     u_int64_t value;
 };
 
 
-int getCharIndex(char c) {  // получаем индекс символа, буквы или цифры
+int GetCharIndex(char c) {  // получаем индекс символа, буквы или цифры
     if (c >= 'A' && c <= 'Z') {
         return c - 'A';
     }
@@ -15,14 +16,14 @@ int getCharIndex(char c) {  // получаем индекс символа, б�
 }
 
 
-void radixSort(Entry* entries, int numStrings) {
+void RadixSort(TEntry* entries, int numStrings) {
     for (int j = 7; j >= 0; j--) {
-        Entry* sorted = (Entry*)malloc(numStrings * sizeof(Entry));  // храненим отсортированные элементы
+        TEntry* sorted = (TEntry*)malloc(numStrings * sizeof(TEntry));  // храненим отсортированные элементы
         int count[36] = {0};
 
         
         for (int i = 0; i < numStrings; i++) {  // 1 этап, подсчитываем сколько каких символов
-            int index = getCharIndex(entries[i].number[j]);
+            int index = GetCharIndex(entries[i].number[j]);
             count[index]++;
         }
         
@@ -33,7 +34,7 @@ void radixSort(Entry* entries, int numStrings) {
         
 
         for (int i = numStrings - 1; i >= 0; i--) {  // 3 этап, по полученным индексам расставляем наши элементы
-            int index = getCharIndex(entries[i].number[j]);
+            int index = GetCharIndex(entries[i].number[j]);
             sorted[--count[index]] = entries[i];
         }
         
@@ -47,24 +48,26 @@ void radixSort(Entry* entries, int numStrings) {
 }
 
 int main() {
-    const int MaxLength = 256;  // длина строки
+    std::cin.tie(0);
+    std::ios::sync_with_stdio(false);
+    const int MAX_LENGTH = 256;  // длина строки
     int capacity = 10;  // вместимость массива
     int numStrings = 0;  // количество считанных строк
 
-    Entry* entries = (Entry*)malloc(capacity * sizeof(Entry));
+    TEntry* entries = (TEntry*)malloc(capacity * sizeof(TEntry));
     if (entries == nullptr) {
         std::cout << "Memory allocation failed!" << '\n';
         return 1;
     }
 
-    char buffer[MaxLength];
+    char buffer[MAX_LENGTH];
 
     // считываем строки с номерами автомобилей и значениями
-    while (std::cin.getline(buffer, MaxLength)) {
+    while (std::cin.getline(buffer, MAX_LENGTH)) {
         if (buffer[0] != '\0') {
             if (numStrings == capacity) {
                 capacity *= 2;
-                Entry* temp = (Entry*)realloc(entries, capacity * sizeof(Entry));
+                TEntry* temp = (TEntry*)realloc(entries, capacity * sizeof(TEntry));
                 if (temp == nullptr) {
                     std::cout << "Memory reallocation failed!" << '\n';
                     free(entries);
@@ -94,13 +97,17 @@ int main() {
         }
     }
 
-    radixSort(entries, numStrings);
+    auto start = std::chrono::steady_clock::now();
+    RadixSort(entries, numStrings);
 
     for (int i = 0; i < numStrings; i++) {
         std::cout << entries[i].number << '\t' << entries[i].value << '\n';
     }
 
     free(entries);
+    auto end = std::chrono::steady_clock::now();
+    std::chrono::duration<double, std::milli> duration = end - start;
 
+    std::cout << "Время работы программы: " << duration.count() << " миллисекунд." << std::endl;
     return 0;
 }
