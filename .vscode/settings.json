@@ -47,6 +47,18 @@
         "streambuf": "cpp",
         "typeinfo": "cpp",
         "cstring": "cpp",
-        "sstream": "cpp"
-    }
+        "sstream": "cpp",
+        "chrono": "cpp",
+        "format": "cpp",
+        "charconv": "cpp",
+        "ctime": "cpp",
+        "ratio": "cpp",
+        "iomanip": "cpp",
+        "span": "cpp",
+        "variant": "cpp",
+        "complex": "cpp",
+        "fstream": "cpp",
+        "cinttypes": "cpp"
+    },
+    "cmake.sourceDirectory": "/home/gleb/vs_code/Discran/laba2/avl_tree"
 }

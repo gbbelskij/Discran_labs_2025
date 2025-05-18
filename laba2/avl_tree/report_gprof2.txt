@@ -1,0 +1,277 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  us/call  us/call  name    
+ 22.22      0.06     0.06 17534263     0.00     0.00  compareStrings(char const*, unsigned short, char const*, unsigned short)
+ 18.52      0.11     0.05    56208     0.89     0.89  resetString(char*)
+ 11.11      0.14     0.03  9504887     0.00     0.00  getBalanceFactor(TreeNode const*)
+ 11.11      0.17     0.03  1183198     0.03     0.05  findNode(TreeNode*, char const*, unsigned short)
+  9.26      0.20     0.03 40292348     0.00     0.00  getDepth(TreeNode const*)
+  7.41      0.21     0.02 10641287     0.00     0.00  updateDepth(TreeNode*)
+  7.41      0.23     0.02  1175426     0.02     0.11  insertNode(TreeNode*, char const*, unsigned short, unsigned long)
+  3.70      0.24     0.01  8734545     0.00     0.01  balanceTree(TreeNode*)
+  3.70      0.26     0.01     3824     2.62     2.62  saveToFile(TreeNode const*, _IO_FILE*)
+  3.70      0.27     0.01                             main
+  1.85      0.27     0.01     3679     1.36     1.36  deleteTree(TreeNode*)
+  0.00      0.27     0.00  1179379     0.00     0.17  BalancedDictionary::add(char const*, unsigned short, unsigned long)
+  0.00      0.27     0.00  1179105     0.00     0.00  createNode(TreeNode*, TreeNode*, char const*, unsigned short, unsigned long)
+  0.00      0.27     0.00   500738     0.00     0.01  rotateRight(TreeNode*)
+  0.00      0.27     0.00   452633     0.00     0.01  rotateLeft(TreeNode*)
+  0.00      0.27     0.00   157166     0.00     0.00  makeLowercase(char)
+  0.00      0.27     0.00     3824     0.00     2.62  BalancedDictionary::exportData(_IO_FILE*)
+  0.00      0.27     0.00     3792     0.00     0.05  BalancedDictionary::search(char const*, unsigned short)
+  0.00      0.27     0.00     3706     0.00     0.05  BalancedDictionary::remove(char const*, unsigned short)
+  0.00      0.27     0.00     3678     0.00    53.60  BalancedDictionary::importData(_IO_FILE*)
+  0.00      0.27     0.00        1     0.00     0.00  BalancedDictionary::BalancedDictionary()
+  0.00      0.27     0.00        1     0.00     1.36  BalancedDictionary::~BalancedDictionary()
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2024 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 3.70% of 0.27 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.01    0.26                 main [1]
+                0.00    0.20    3678/3678        BalancedDictionary::importData(_IO_FILE*) [2]
+                0.05    0.00   56208/56208       resetString(char*) [8]
+                0.00    0.01    3824/3824        BalancedDictionary::exportData(_IO_FILE*) [13]
+                0.00    0.00   15000/1179379     BalancedDictionary::add(char const*, unsigned short, unsigned long) [3]
+                0.00    0.00    3792/3792        BalancedDictionary::search(char const*, unsigned short) [17]
+                0.00    0.00    3706/3706        BalancedDictionary::remove(char const*, unsigned short) [18]
+                0.00    0.00       1/1           BalancedDictionary::~BalancedDictionary() [19]
+                0.00    0.00  157166/157166      makeLowercase(char) [27]
+                0.00    0.00       1/1           BalancedDictionary::BalancedDictionary() [28]
+-----------------------------------------------
+                0.00    0.20    3678/3678        main [1]
+[2]     73.0    0.00    0.20    3678         BalancedDictionary::importData(_IO_FILE*) [2]
+                0.00    0.19 1164379/1179379     BalancedDictionary::add(char const*, unsigned short, unsigned long) [3]
+                0.00    0.00    3678/3679        deleteTree(TreeNode*) [14]
+-----------------------------------------------
+                0.00    0.00   15000/1179379     main [1]
+                0.00    0.19 1164379/1179379     BalancedDictionary::importData(_IO_FILE*) [2]
+[3]     72.1    0.00    0.19 1179379         BalancedDictionary::add(char const*, unsigned short, unsigned long) [3]
+                0.02    0.11 1175426/1175426     insertNode(TreeNode*, char const*, unsigned short, unsigned long) [4]
+                0.03    0.03 1175700/1183198     findNode(TreeNode*, char const*, unsigned short) [6]
+                0.00    0.00    3679/1179105     createNode(TreeNode*, TreeNode*, char const*, unsigned short, unsigned long) [26]
+-----------------------------------------------
+                             7559119             insertNode(TreeNode*, char const*, unsigned short, unsigned long) [4]
+                0.02    0.11 1175426/1175426     BalancedDictionary::add(char const*, unsigned short, unsigned long) [3]
+[4]     50.0    0.02    0.11 1175426+7559119 insertNode(TreeNode*, char const*, unsigned short, unsigned long) [4]
+                0.01    0.07 8734545/8734545     balanceTree(TreeNode*) [5]
+                0.03    0.00 8734545/17534263     compareStrings(char const*, unsigned short, char const*, unsigned short) [7]
+                0.00    0.00 1175426/1179105     createNode(TreeNode*, TreeNode*, char const*, unsigned short, unsigned long) [26]
+                             7559119             insertNode(TreeNode*, char const*, unsigned short, unsigned long) [4]
+-----------------------------------------------
+                0.01    0.07 8734545/8734545     insertNode(TreeNode*, char const*, unsigned short, unsigned long) [4]
+[5]     31.5    0.01    0.07 8734545         balanceTree(TreeNode*) [5]
+                0.03    0.01 9504887/9504887     getBalanceFactor(TreeNode const*) [9]
+                0.02    0.01 8734545/10641287     updateDepth(TreeNode*) [10]
+                0.00    0.00  500738/500738      rotateRight(TreeNode*) [15]
+                0.00    0.00  452633/452633      rotateLeft(TreeNode*) [16]
+-----------------------------------------------
+                0.00    0.00    3706/1183198     BalancedDictionary::remove(char const*, unsigned short) [18]
+                0.00    0.00    3792/1183198     BalancedDictionary::search(char const*, unsigned short) [17]
+                0.03    0.03 1175700/1183198     BalancedDictionary::add(char const*, unsigned short, unsigned long) [3]
+[6]     22.3    0.03    0.03 1183198         findNode(TreeNode*, char const*, unsigned short) [6]
+                0.03    0.00 8799718/17534263     compareStrings(char const*, unsigned short, char const*, unsigned short) [7]
+-----------------------------------------------
+                0.03    0.00 8734545/17534263     insertNode(TreeNode*, char const*, unsigned short, unsigned long) [4]
+                0.03    0.00 8799718/17534263     findNode(TreeNode*, char const*, unsigned short) [6]
+[7]     22.2    0.06    0.00 17534263         compareStrings(char const*, unsigned short, char const*, unsigned short) [7]
+-----------------------------------------------
+                0.05    0.00   56208/56208       main [1]
+[8]     18.5    0.05    0.00   56208         resetString(char*) [8]
+-----------------------------------------------
+                0.03    0.01 9504887/9504887     balanceTree(TreeNode*) [5]
+[9]     15.5    0.03    0.01 9504887         getBalanceFactor(TreeNode const*) [9]
+                0.01    0.00 19009774/40292348     getDepth(TreeNode const*) [11]
+-----------------------------------------------
+                0.00    0.00  905266/10641287     rotateLeft(TreeNode*) [16]
+                0.00    0.00 1001476/10641287     rotateRight(TreeNode*) [15]
+                0.02    0.01 8734545/10641287     balanceTree(TreeNode*) [5]
+[10]    12.3    0.02    0.01 10641287         updateDepth(TreeNode*) [10]
+                0.01    0.00 21282574/40292348     getDepth(TreeNode const*) [11]
+-----------------------------------------------
+                0.01    0.00 19009774/40292348     getBalanceFactor(TreeNode const*) [9]
+                0.01    0.00 21282574/40292348     updateDepth(TreeNode*) [10]
+[11]     9.3    0.03    0.00 40292348         getDepth(TreeNode const*) [11]
+-----------------------------------------------
+                             2452764             saveToFile(TreeNode const*, _IO_FILE*) [12]
+                0.01    0.00    3824/3824        BalancedDictionary::exportData(_IO_FILE*) [13]
+[12]     3.7    0.01    0.00    3824+2452764 saveToFile(TreeNode const*, _IO_FILE*) [12]
+                             2452764             saveToFile(TreeNode const*, _IO_FILE*) [12]
+-----------------------------------------------
+                0.00    0.01    3824/3824        main [1]
+[13]     3.7    0.00    0.01    3824         BalancedDictionary::exportData(_IO_FILE*) [13]
+                0.01    0.00    3824/3824        saveToFile(TreeNode const*, _IO_FILE*) [12]
+-----------------------------------------------
+                             2358210             deleteTree(TreeNode*) [14]
+                0.00    0.00       1/3679        BalancedDictionary::~BalancedDictionary() [19]
+                0.00    0.00    3678/3679        BalancedDictionary::importData(_IO_FILE*) [2]
+[14]     1.9    0.01    0.00    3679+2358210 deleteTree(TreeNode*) [14]
+                             2358210             deleteTree(TreeNode*) [14]
+-----------------------------------------------
+                0.00    0.00  500738/500738      balanceTree(TreeNode*) [5]
+[15]     1.2    0.00    0.00  500738         rotateRight(TreeNode*) [15]
+                0.00    0.00 1001476/10641287     updateDepth(TreeNode*) [10]
+-----------------------------------------------
+                0.00    0.00  452633/452633      balanceTree(TreeNode*) [5]
+[16]     1.0    0.00    0.00  452633         rotateLeft(TreeNode*) [16]
+                0.00    0.00  905266/10641287     updateDepth(TreeNode*) [10]
+-----------------------------------------------
+                0.00    0.00    3792/3792        main [1]
+[17]     0.1    0.00    0.00    3792         BalancedDictionary::search(char const*, unsigned short) [17]
+                0.00    0.00    3792/1183198     findNode(TreeNode*, char const*, unsigned short) [6]
+-----------------------------------------------
+                0.00    0.00    3706/3706        main [1]
+[18]     0.1    0.00    0.00    3706         BalancedDictionary::remove(char const*, unsigned short) [18]
+                0.00    0.00    3706/1183198     findNode(TreeNode*, char const*, unsigned short) [6]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[19]     0.0    0.00    0.00       1         BalancedDictionary::~BalancedDictionary() [19]
+                0.00    0.00       1/3679        deleteTree(TreeNode*) [14]
+-----------------------------------------------
+                0.00    0.00    3679/1179105     BalancedDictionary::add(char const*, unsigned short, unsigned long) [3]
+                0.00    0.00 1175426/1179105     insertNode(TreeNode*, char const*, unsigned short, unsigned long) [4]
+[26]     0.0    0.00    0.00 1179105         createNode(TreeNode*, TreeNode*, char const*, unsigned short, unsigned long) [26]
+-----------------------------------------------
+                0.00    0.00  157166/157166      main [1]
+[27]     0.0    0.00    0.00  157166         makeLowercase(char) [27]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[28]     0.0    0.00    0.00       1         BalancedDictionary::BalancedDictionary() [28]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2024 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [26] createNode(TreeNode*, TreeNode*, char const*, unsigned short, unsigned long) [10] updateDepth(TreeNode*) [3] BalancedDictionary::add(char const*, unsigned short, unsigned long)
+  [14] deleteTree(TreeNode*)  [27] makeLowercase(char)    [18] BalancedDictionary::remove(char const*, unsigned short)
+   [4] insertNode(TreeNode*, char const*, unsigned short, unsigned long) [7] compareStrings(char const*, unsigned short, char const*, unsigned short) [17] BalancedDictionary::search(char const*, unsigned short)
+  [16] rotateLeft(TreeNode*)   [9] getBalanceFactor(TreeNode const*) [28] BalancedDictionary::BalancedDictionary()
+  [12] saveToFile(TreeNode const*, _IO_FILE*) [6] findNode(TreeNode*, char const*, unsigned short) [19] BalancedDictionary::~BalancedDictionary()
+   [5] balanceTree(TreeNode*) [11] getDepth(TreeNode const*) [1] main
+   [8] resetString(char*)     [13] BalancedDictionary::exportData(_IO_FILE*)
+  [15] rotateRight(TreeNode*)  [2] BalancedDictionary::importData(_IO_FILE*)
