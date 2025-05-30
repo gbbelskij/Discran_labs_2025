@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        ".fantomasignore": "ignore",
         "*.html": "django-html",
         "array": "cpp",
         "atomic": "cpp",
@@ -58,7 +59,13 @@
         "variant": "cpp",
         "complex": "cpp",
         "fstream": "cpp",
-        "cinttypes": "cpp"
+        "cinttypes": "cpp",
+        "condition_variable": "cpp",
+        "map": "cpp",
+        "mutex": "cpp",
+        "semaphore": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp"
     },
     "cmake.sourceDirectory": "/home/gleb/vs_code/Discran/laba2/avl_tree"
 }
